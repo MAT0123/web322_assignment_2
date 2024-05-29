@@ -13,7 +13,7 @@ function Initialize() {
             });
             resolve();
         } else {
-            reject("Sets have already been initialized");
+            reject("Set already been initialized");
         }
     });
 }
@@ -22,7 +22,7 @@ function getAllSets() {
         if (sets.length > 0) {
             resolve(sets);
         } else {
-            reject("No sets found");
+            reject("No set found");
         }
     });
 }
@@ -33,7 +33,7 @@ function getSetByNum(setNum) {
         if (set) {
             resolve(set);
         } else {
-            reject("Set not found");
+            reject("No set found");
         }
     });
 }
@@ -44,7 +44,7 @@ function getSetsByTheme(theme) {
         if (set.length > 0) {
             resolve(set);
         } else {
-            reject("Sets not found");
+            reject("No set found");
         }
     });
 }

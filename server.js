@@ -8,7 +8,7 @@
 *
 * Name: Matthew Tjoa Student ID: 166179226 Date: 28 May 2024
 *
-* Published URL: 
+* Published URL: https://web322-assignment-2-etoe-iy4lpwis9-mat0123s-projects.vercel.app/
 *
 ********************************************************************************/
 
@@ -16,7 +16,7 @@ const legoData = require("./modules/legoSets");
 const express = require("express");
 const app = express();
 legoData.Initialize();
-app.listen(8080);
+app.listen(2222);
 app.set('views', __dirname + '/views');
 app.use(express.static(__dirname + '/public'));
 
@@ -33,13 +33,13 @@ app.get("/lego/sets", (req, res) => {
 });
 
 app.get("/lego/sets/num-demo", (req, res) => {
-    legoData.getSetByNum("75252-1")
+    legoData.getSetByNum("001-1")
         .then((data) => res.json(data))
         .catch((err) => res.send(err));
 });
 
 app.get("/lego/sets/theme-demo", (req, res) => {
-    legoData.getSetsByTheme("Star Wars")
+    legoData.getSetsByTheme("199")
         .then((data) => res.json(data))
         .catch((err) => res.send(err));
 }
