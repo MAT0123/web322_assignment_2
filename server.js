@@ -14,8 +14,6 @@
 
 const legoData = require("./modules/legoSets");
 const express = require("express");
-const pg = require('pg');
-const Sequelize = require('sequelize');
 const app = express();
 legoData.Initialize();
 app.listen(8080);
