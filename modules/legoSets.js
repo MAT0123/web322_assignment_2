@@ -11,6 +11,7 @@ function Initialize() {
                 const theme = themeData.find((theme) => theme.id === set.theme_id);
                 return { ...set, theme: theme.name };
             });
+            console.log(sets);
             resolve();
         } else {
             reject("Set already been initialized");

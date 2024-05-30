@@ -16,7 +16,7 @@ const legoData = require("./modules/legoSets");
 const express = require("express");
 const app = express();
 legoData.Initialize();
-app.listen(2222);
+app.listen(5555);
 app.set('views', __dirname + '/views');
 app.use(express.static(__dirname + '/public'));
 
@@ -25,7 +25,7 @@ app.get("/", (req, res) => {
     res.send("Assignment 2: Matthew Tjoa - 166179226");
 }
 );
-
+legoData.getAllSets()
 app.get("/lego/sets", (req, res) => {
     legoData.getAllSets()
         .then((data) => res.json(data))
@@ -39,7 +39,7 @@ app.get("/lego/sets/num-demo", (req, res) => {
 });
 
 app.get("/lego/sets/theme-demo", (req, res) => {
-    legoData.getSetsByTheme("199")
+    legoData.getSetsByTheme("Technic")
         .then((data) => res.json(data))
         .catch((err) => res.send(err));
 }
