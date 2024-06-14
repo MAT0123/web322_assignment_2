@@ -16,32 +16,55 @@ const legoData = require("./modules/legoSets");
 const express = require("express");
 const app = express();
 legoData.Initialize();
-app.listen(5555);
+legoData.getAllSets();
 app.set('views', __dirname + '/views');
 app.use(express.static(__dirname + '/public'));
 
-
 app.get("/", (req, res) => {
-    res.send("Assignment 2: Matthew Tjoa - 166179226");
-}
-);
-legoData.getAllSets()
+    //res.send("Assignment 2: Matthew Tjoa - 166179226");
+    res.sendFile(__dirname + "/views/home.html");
+
+});
+
+app.get("/about", (req, res) => {
+    res.sendFile(__dirname + "/views/about.html");
+});
+
 app.get("/lego/sets", (req, res) => {
-    legoData.getAllSets()
-        .then((data) => res.json(data))
-        .catch((err) => res.send(err));
+    const query = req.query.theme;
+    const decodedQuery = decodeURIComponent(query);
+
+    if (query) {
+        legoData.getSetsByTheme(decodedQuery)
+            .then((data) => res.json(data))
+            .catch((err) => {
+                res.status(404);
+                res.send(err);
+            });
+    } else {
+        legoData.getAllSets()
+            .then((data) => res.json(data))
+            .catch((err) => {
+                res.status(404);
+                res.send(err);
+            });
+    }
 });
 
-app.get("/lego/sets/num-demo", (req, res) => {
-    legoData.getSetByNum("001-1")
+app.get("/lego/sets/:num", (req, res) => {
+    const param = req.params.num;
+
+    legoData.getSetByNum(param)
         .then((data) => res.json(data))
-        .catch((err) => res.send(err));
+        .catch((err) => {
+            res.status(404);
+            res.send(err);
+        });
 });
 
-app.get("/lego/sets/theme-demo", (req, res) => {
-    legoData.getSetsByTheme("Technic")
-        .then((data) => res.json(data))
-        .catch((err) => res.send(err));
-}
-);
+app.use((req, res, next) => {
+    res.status(404);
+    res.sendFile(__dirname + "/views/404.html");
+});
 
+app.listen(8888);

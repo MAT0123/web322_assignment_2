@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lego Collection</title>
+    <link rel="stylesheet" href="/css/main.css">
+</head>
+<body>
+    <nav class="bg-gray-800 p-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="/" class="text-white>text-2xl">Lego Collection</a>
+            <div class="flex items-center">
+                <a href="/about" class="text-white">About</a>
+                <div class="dropdown">
+                    <div tabindex="0" class="m-1 btn btn-sm btn-primary">Theme</div>
+                    <ul tabindex="0" class="p-2 shadow menu dropdown-content bg-base-100 rounded-box w-52">
+                        <li>
+                            <a href="/lego/sets?theme=Star Wars: Build Your Own Adventure: Galactic Missions">Star Wars</a>
+                        </li>
+                        <li>
+                            <a href="/lego/sets?theme=DiscoverySet">Discovery Set</a>
+                        </li>
+                        <li>
+                            <a href="/lego/sets?theme=Master Mechanic Set">Master Mechanic Set</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </nav>
+    <div class="container mx-auto">
+        <div class="hero min-h-screen bg-base-200">
+            <div class="text-center hero-content">
+                <div class="max-w-md">
+                    <h1 class="mb-5 text-5xl font-bold">Explore Lego Collection</h1>
+                    <p class="mb-5">Check the card bellow</p>
+                    <a href="/lego/sets" class="btn btn-primary">View Lego Sets</a>
+                </div>
+            </div>
+        </div>
+        <div class="grid grid-cols-3 gap-4">
+            <div class="card">
+                <div class="card-body">
+                    <img src="https://cdn.rebrickable.com/media/sets/021-1.jpg" alt="Duplo">
+                    <h2 class="card-title
+                    ">Lego wheel set</h2>
+                    <p class="text-sm">For vehicle wheel</p>
+                    <a href="/lego/sets/001-1" class="btn btn-primary">Data Set</a>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <img src="https://cdn.rebrickable.com/media/sets/028-1.jpg" alt="Duplo">
+                    <h2 class="card-title
+                    ">Duplo lego</h2>
+                    <p class="text-sm">Some old lego name duplo</p>
+                    <a href="/lego/sets/001-1" class="btn btn-primary">Data Set</a>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <img src="https://cdn.rebrickable.com/media/sets/03093-1.jpg" alt="Lego Set 002-1">
+                    <h2 class="card-title">Lego Creator </h2>
+                    
+                    <p class="text-sm">Boaard game builder</p>
+                    <a href="/lego/sets/002-1" class="btn btn-primary">Data Set</a>
+                </div>
+            </div>
+        </div>
+</body>
+</html>

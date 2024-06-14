@@ -11,7 +11,6 @@ function Initialize() {
                 const theme = themeData.find((theme) => theme.id === set.theme_id);
                 return { ...set, theme: theme.name };
             });
-            console.log(sets);
             resolve();
         } else {
             reject("Set already been initialized");
@@ -41,7 +40,7 @@ function getSetByNum(setNum) {
 
 function getSetsByTheme(theme) {
     return new Promise((resolve, reject) => {
-        const set = sets.filter((set) => set.theme === theme);
+        const set = sets.filter((set) => set.theme.toLowerCase() === theme.toLowerCase());
         if (set.length > 0) {
             resolve(set);
         } else {
