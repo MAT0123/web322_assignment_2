@@ -1,0 +1,34 @@
+<nav class="bg-gray-800 p-4">
+    <div class="container mx-auto flex justify-between items-center">
+        <!-- <a href="/" class="text-white text-2xl">Lego Collection</a> -->
+        <div class="flex items-center justify-between w-full">
+            <div>
+                <a href="/about" class="text-white mr-2 <%= (page == "/about") ? 'active' : '' %>">About </a> 
+            </div>
+             
+             <div class="flex items-center">
+                <li class="text-white list-none"><a class="<%= (page == "/") ? 'active' : '' %>" href="/" >Lego Collection</a></li>
+                <li class="text-white list-none ml-2"><a class="<%= (page == "/lego/sets") ? 'active' : '' %>" href="/lego/sets">View Collection</a></li>
+             </div>
+           
+            <!-- <div class="dropdown ml-2">
+                <div tabindex="0" class="m-1 btn btn-sm btn-primary">Theme</div>
+                <ul tabindex="0" class="p-2 shadow menu dropdown-content bg-base-100 rounded-box w-52">
+                    <li>
+                         <a href="/lego/sets?theme=Star Wars: Build Your Own Adventure: Galactic Missions">Star Wars</a> 
+                        <a class="<%= (page == "/lego/sets") ? 'active' : '' %>" href="/lego/sets?theme=Star Wars: Build Your Own Adventure: Galactic Missions">Star Wars</a>
+                    </li>
+                    <li>
+                         <a href="/lego/sets?theme=DiscoverySet">Discovery Set</a>
+                        <a class="<%= (page == "/lego/sets") ? 'active' : '' %>" href="/lego/sets?theme=DiscoverySet">Discovery Set</a>
+                    </li>
+                    <li>
+                         <a href="/lego/sets?theme=Master Mechanic Set">Master Mechanic Set</a> 
+                        <a class="<%= (page == "/lego/sets") ? 'active' : '' %>" href="/lego/sets?theme=Master Mechanic Set">Star Wars</a>
+                    </li>
+                </ul>
+            </div> -->
+            
+        </div>
+    </div>
+</nav>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About</title>
+    <link rel="stylesheet" href="/css/main.css">
+
+</head>
+<body>
+    <%- include('partials/navbar' , {page: "/"}) %>
+    <div class="container mx-auto">
+        <div class="hero min-h-screen bg-base-200">
+            <div class="text-center hero-content">
+                <div class="max-w-md">
+                    <!-- <h1 class="mb-5 text-5xl font-bold">About</h1>
+                    <p class="mb-5">Id: 166179226</p> -->
+                    <h1 class="mb-5 text-5xl font-bold"><%= set.name %></h1>
+                    <p class="mb-5">Below, you will find detailed information about the set: <%= set.name %></p>
+                </div>
+            </div>
+        </div>
+        <div class="grid grid-cols-2 gap-4">
+            <div class="card">
+                <div class="card-body">
+                    <img src=<%= set.img_url %> alt="Image">
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <div>
+                        <span>Set name</span>
+                        <p class="text-sm"><%= set.name %></p>
+                    </div>
+                    <div>
+                        <span>Years released</span>
+                        <p class="text-sm"><%= set.year %></p>
+                    </div>
+                    <div>
+                        <span>Theme</span>
+                        <p class="text-sm"><%= set.theme %>s</p>
+                    </div>
+                    <div>
+                        <span>Number of Parts</span>
+                        <p class="text-sm"><%= set.name %></p>
+                    </div>
+                    <div>
+                        <p class="text-sm quote"></p>
+                    </div>
+                    <div>
+                        <button class="btn-secondary btn">Return</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- <div class="grid grid-cols-2 gap-4">
+            <div class="card">
+                <div class="card-body">
+                    <img src="https://as2.ftcdn.net/v2/jpg/03/69/95/83/1000_F_369958320_QcDuUkukpicUwafl3jrxjNWTBFAzOftf.jpg" alt="vision mixer">
+                </div>
+            </div> -->
+            <!-- <div class="card">
+                <div class="card-body">
+                    <p class="text-sm">I love to do media producer things such as operating switcher better than programming</p>
+                </div>
+            </div> -->
+        <!-- </div> -->
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", ()=>{
+        /* TODO: "fetch" the data at: https://quotable.io/random and update an element in the DOM with
+        the "content" and "author" */
+        fetch("https://quotable.io/random")
+        .then(response => response.json())
+        .then(data => {
+            const quote = document.querySelector(".quote");
+            quote.textContent = `"${data.content}" - ${data.author}`;
+        });
+
+        const returnF = () => {
+            window.history.back();
+        }
+        const btn = document.querySelector(".btn");
+        btn.addEventListener("click", returnF);
+    });
+    </script>
+    
+</body>
+</html>

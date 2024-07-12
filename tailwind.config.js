@@ -1,6 +1,6 @@
 module.exports = {
     content: [
-    './views/**/*.{html,js}',
+    './views/**/*.{ejs,js}',
       ],
     plugins: [require('@tailwindcss/typography'), require('daisyui')],
     daisyui: {
