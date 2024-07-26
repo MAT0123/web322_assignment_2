@@ -16,14 +16,7 @@ let sequelize = new Sequelize("neondb", "neondb_owner", "QjTAugf2Fi4U", {
     },
 });
 
-sequelize
-  .authenticate()
-  .then(() => {
-    console.log('Connection has been established successfully.');
-  })
-  .catch((err) => {
-    console.log('Unable to connect to the database:', err);
-  });
+
 
 //let sets = [];
 const Theme = sequelize.define('Theme', {
