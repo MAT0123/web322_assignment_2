@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Not found</title>
+    <title>Lego Collection</title>
     <link rel="stylesheet" href="/css/main.css">
 </head>
 <body>
@@ -39,7 +39,7 @@
                         </td>
                         <td><%= set.name %></td>
                         <td>
-                            <a href="/lego/sets?theme=<%= set.theme %>" class="btn btn-primary"><%= set.theme %></a>
+                            <a href="/lego/sets?theme=<%= set.Theme.name %>" class="btn btn-primary"><%= set.Theme.name %></a>
                         </td>
                         <td><%= set.year %></td>
                         <td><%= set.num_parts %></td>

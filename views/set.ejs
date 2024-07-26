@@ -38,7 +38,7 @@
                     </div>
                     <div>
                         <span>Theme</span>
-                        <p class="text-sm"><%= set.theme %>s</p>
+                        <p class="text-sm"><%= set.Theme.name %>s</p>
                     </div>
                     <div>
                         <span>Number of Parts</span>
@@ -48,7 +48,13 @@
                         <p class="text-sm quote"></p>
                     </div>
                     <div>
+                        <a href="/lego/editSet/<%= set.set_num %>" class="btn btn-success">Edit</a>
+                    </div>
+                    <div>
                         <button class="btn-secondary btn">Return</button>
+                    </div>
+                    <div>
+                        <a href="/lego/deleteSet/<%= set.set_num %>" class="btn btn-success">Delete Set</a>
                     </div>
                 </div>
             </div>
