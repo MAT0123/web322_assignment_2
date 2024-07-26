@@ -3,8 +3,8 @@ require('dotenv').config();
 //  const themeData = require("../data/themeData");
 const { Sequelize } = require('sequelize');
 
-let sequelize = new Sequelize("neondb", "neondb_owner", "QjTAugf2Fi4U", {
-    host: "ep-green-bird-a57k9tt5-pooler.us-east-2.aws.neon.tech",
+let sequelize = new Sequelize(process.env.DB_DATABASE, process.env.DB_USER, process.env.DB_PASSWORD, {
+    host: process.env.DB_HOST,
     dialect: 'postgres',
     port: 5432,
     dialectModule: require('pg'),
@@ -16,7 +16,14 @@ let sequelize = new Sequelize("neondb", "neondb_owner", "QjTAugf2Fi4U", {
     },
 });
 
-
+sequelize
+  .authenticate()
+  .then(() => {
+    console.log('Connection has been established successfully.');
+  })
+  .catch((err) => {
+    console.log('Unable to connect to the database:', err);
+  });
 
 //let sets = [];
 const Theme = sequelize.define('Theme', {
