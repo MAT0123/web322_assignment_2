@@ -17,7 +17,6 @@ const app = express();
 legoData.Initialize();
 legoData.getAllSets();
 app.set('view engine', 'ejs');
-express.urlencoded({extended:true})
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(__dirname + '/public'));
 
