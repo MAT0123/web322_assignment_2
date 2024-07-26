@@ -213,6 +213,7 @@ module.exports = {
     getSetsByTheme,
     editSet,
     deleteSet,
+    addSet
 };
 
 // sequelize
