@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
 require('dotenv').config();
-mongoose.connect(process.env.MONGO_CONNECTION_STRING, { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect(process.env.MONGO_CONNECTION_STRING);
 const Schema = mongoose.Schema;
 const userSchema = new Schema({
     userName: {
