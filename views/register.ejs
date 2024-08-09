@@ -1,0 +1,56 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="/css/main.css">
+</head>
+
+<body>
+    <%- include('partials/navbar', { page: "/register" }) %>
+    <div class="container mx-auto">
+        <div class="hero min-h-150 bg-base-200 mt-5">
+            <div class="text-center hero-content">
+                <div class="max-w-md">
+                    <h1 class="mb-5 text-5xl font-bold">Register</h1>
+                    <p class="mb-5">Please fill out the form below to register</p>
+                </div>
+            </div>
+        </div>
+        <form action="/register" method="POST">
+            <div class="form-control">
+                <label class="label">
+                    <span class="label-text
+                    ">User Name</span>
+                </label>
+                <input type="text" name="userName" class="input input-bordered" placeholder="User Name" required>
+            </div>
+            <div class="form-control">
+                <label class="label">
+                    <span class="label-text
+                    ">Password</span>
+                </label>
+                <input type="password" name="password" class="input input-bordered" placeholder="Password" required>
+            </div>
+            <div class="form-control">
+                <label class="label">
+                    <span class="label-text
+                    ">Confirm Password</span>
+                </label>
+                <input type="password" name="password2" class="input input-bordered" placeholder="Confirm Password" required>
+            </div>
+            <div class="form-control">
+                <label class="label">
+                    <span class="label-text
+                    ">Email Address</span>
+                </label>
+                <input type="email" name="email" class="input input-bordered" placeholder="Email Address" required>
+            </div>
+            <button type="submit" class="btn btn-primary mt-3">Register</button>
+        </form>
+
+    </div>
+</body>
+</html>

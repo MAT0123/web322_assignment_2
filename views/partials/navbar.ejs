@@ -9,9 +9,33 @@
              <div class="flex items-center">
                 <li class="text-white list-none"><a class="<%= (page == "/") ? 'active' : '' %>" href="/" >Lego Collection</a></li>
                 <li class="text-white list-none ml-2"><a class="<%= (page == "/lego/sets") ? 'active' : '' %>" href="/lego/sets">View Collection</a></li>
-                <li class="text-white list-none ml-2"><a class="<%= (page == "/lego/addSet") ? 'active' : '' %>" href="/lego/addSet">Add to Collection</a></li>
+                <% if (session.user) { %>
+                    <li class="list-none ml-2 text-white">
+                        <details>
+                        <summary class="text-white">Account: <%= session.user.userName %></summary>
+                        <ul class="p-2 right-0">
+                        <li class="text-white"><a class="<%= (page == "/lego/addSet") ? 'active' : '' %>" href="/lego/addSet">Add to Collection</a></li>
+                        <li class="text-white"><a class="<%= (page == "/userHistory") ? 'active' : '' %>" href="/userHistory">User History</a></li>
+                        <li class="text-white"><a href="/logout">Log Out</a></li>
+                        </ul>
+                        </details>
+                        </li>
+                <% } else { %>
+                    <li class="list-none ml-2 text-white">
+                        <details>
+                        <summary class="text-white">Account</summary>
+                        <ul class="p-2 right-0">
+                        <li class="text-white"><a class="<%= (page == "/login") ? 'active' : '' %>" href="/login">Login</a></li>
+                        <li class="text-white"><a class="<%= (page == "/register") ? 'active' : '' %>" href="/register">Register</a></li>
+                        </ul>
+                        </details>
+                        </li>
+                <% } %>
+                <!-- <li class="text-white list-none ml-2"><a class="<%= (page == "/lego/addSet") ? 'active' : '' %>" href="/lego/addSet">Add to Collection</a></li> -->
              </div>
-           
+
+
+
             <!-- <div class="dropdown ml-2">
                 <div tabindex="0" class="m-1 btn btn-sm btn-primary">Theme</div>
                 <ul tabindex="0" class="p-2 shadow menu dropdown-content bg-base-100 rounded-box w-52">

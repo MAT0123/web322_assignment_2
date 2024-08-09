@@ -47,9 +47,11 @@
                     <div>
                         <p class="text-sm quote"></p>
                     </div>
+                    <% if(session.user){ %>
                     <div>
                         <a href="/lego/editSet/<%= set.set_num %>" class="btn btn-success">Edit</a>
                     </div>
+                    <% } %>
                     <div>
                         <button class="btn-secondary btn">Return</button>
                     </div>
