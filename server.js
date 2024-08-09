@@ -13,12 +13,11 @@
 
 const legoData = require("./modules/legoSets");
 const express = require("express");
-const path = require('path'); 
+const path = require('path');
 const authData = require("./modules/auth-service");
 const clientSessions = require("client-sessions");
 const app = express();
-legoData.Initialize().then(authData.initialize);
-legoData.getAllSets();
+
 app.set('view engine', 'ejs');
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(__dirname + '/public'));
@@ -26,11 +25,11 @@ app.set('views', path.join(__dirname, 'views'));
 
 app.use(clientSessions({
     cookieName: "session",
-    secret
-    : "web322_assignment_2",
+    secret: "web322_assignment_2",
     duration: 2 * 60 * 1000,
     activeDuration: 1000 * 60
 }));
+
 app.use((req, res, next) => {
     res.locals.session = req.session;
     next();
